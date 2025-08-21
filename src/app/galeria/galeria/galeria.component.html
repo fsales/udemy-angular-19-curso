@@ -1,0 +1,57 @@
+<!-- filtros-->
+<form #frm="ngForm">
+    <div class="p-4 mx-auto bg-white shadow rounded-lg">
+    
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+    
+            <input 
+                type="text"
+                placeholder="Pesquisar pelo nome do local"
+                class="w-full border border-gray-300 p-2 rounded shadow-sm focus:ring focus:ring-blue-400"
+                [(ngModel)]="filtro.nome"
+                name="nome"
+                (ngModelChange)="filtrar()"
+            />
+    
+            <select 
+                name="categoria" 
+                id="categoria"
+                [(ngModel)]="filtro.categoria"
+                class="w-full border border-gray-300 p-2 rounded shadow-sm focus:ring focus:ring-blue-400"
+                (ngModelChange)="filtrar()"
+                aria-label="Filtrar por categoria"
+            >
+                <option value="">Todas as categorias</option>
+                @for(item of categorias; track item.id){
+                    <option [value]="item.nome">{{ item.nome }}</option>
+                }
+            </select>
+    
+        </div>
+    
+    </div>
+</form>
+
+<!-- Listagem de lugares-->
+<div class=" lugares-list p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    @for(item of lugares; track item.id){
+        <div class="bg-white shadow rounded overflow-hidden">
+            <img 
+                class="w-full h-40 object-cover"
+                [src]="item.urlFoto" 
+                [alt]="item.nome"
+            />
+            <div class="p-4">
+                <h2 class="text-lg font-semibold" >{{item.nome}}</h2>
+                <p class="text-gray-500">Categoria: <span class="text-blue-600">{{item.categoria}}</span></p>
+                <p class="text-gray-500">Localização: {{item.localizacao}}</p>
+                <div class="mt-2 flex items-center">
+                    <span class="text-yellow-500" [innerHTML]="totalEstrelas(item)"></span>
+                    <span class="ml-2 text-gray-600" > {{item.avaliacao}} </span>
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>

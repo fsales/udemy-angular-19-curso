@@ -1,0 +1,77 @@
+{
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "Restaurante",
+      "descricao": "Locais para refeições e gastronomia"
+    },
+    {
+      "id": "2",
+      "nome": "Praia",
+      "descricao": "Locais para lazer à beira-mar"
+    },
+    {
+      "id": "3",
+      "nome": "Parque",
+      "descricao": "Áreas verdes para passeio e atividades ao ar livre"
+    },
+    {
+      "id": "4",
+      "nome": "Museu",
+      "descricao": "Espaços culturais e históricos"
+    },
+    {
+      "id": "5",
+      "nome": "Shopping",
+      "descricao": "Centros comerciais para compras e entretenimento"
+    },
+    {
+      "id": "6",
+      "nome": "Cinema",
+      "descricao": "Locais para assistir filmes"
+    },
+    {
+      "id": "7",
+      "nome": "Teatro",
+      "descricao": "Espaços para apresentações artísticas"
+    },
+    {
+      "id": "8",
+      "nome": "Trilha",
+      "descricao": "Caminhos para caminhadas e contato com a natureza"
+    },
+    {
+      "id": "b083",
+      "nome": "testefdafffffffffffffffffffffffffffffffffffffffffffffffff",
+      "descricao": "tstesfddad"
+    },
+    {
+      "id": "6d2b",
+      "nome": "teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "251e",
+      "nome": "teste",
+      "descricao": "teste"
+    }
+  ],
+  "lugares": [
+    {
+      "id": "7502",
+      "nome": "teste",
+      "categoria": "teste",
+      "localizacao": "teste",
+      "urlFoto": "https://hoteisquintadosol.com/wp-content/uploads/2018/10/praia-do-espelho-19-1024x576.jpg",
+      "avaliacao": "3"
+    },
+    {
+      "id": "302b",
+      "nome": "Espelho",
+      "categoria": "Praia",
+      "localizacao": "Banhia",
+      "urlFoto": "https://hoteisquintadosol.com/wp-content/uploads/2018/10/praia-do-espelho-19-1024x576.jpg",
+      "avaliacao": "5"
+    }
+  ]
+}
