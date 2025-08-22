@@ -1,0 +1,24 @@
+/* 
+  ESTILOS DE COMPONENTES GLOBAIS
+  
+  Este diretório contém estilos que são aplicados globalmente
+  na aplicação e importados no styles.scss principal.
+  
+  Estrutura:
+  - notifications.scss → Estilos para SnackBar notifications
+  - (futuros componentes globais aqui)
+  
+  Por que separar em arquivos?
+  ✅ Melhor organização do código
+  ✅ Facilita manutenção
+  ✅ Reutilização mais clara
+  ✅ Separação de responsabilidades
+*/
+
+// Import all component styles using modern @use syntax
+@use 'notifications.scss';
+
+// Adicione novos componentes globais aqui:
+// @import 'dialogs.scss';
+// @import 'tooltips.scss';
+// @import 'loading.scss';

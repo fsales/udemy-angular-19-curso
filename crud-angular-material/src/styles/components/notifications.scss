@@ -1,0 +1,28 @@
+/* 
+  ESTILOS GLOBAIS - Notificações SnackBar
+  
+  Localização: src/styles/components/notifications.scss
+  
+  Diferenciação visual por cores semânticas do Angular Material:
+*/
+
+::ng-deep .snackbar-sucesso {
+  --mdc-snackbar-container-color: var(--mat-sys-primary);
+}
+
+::ng-deep .snackbar-erro {
+  --mdc-snackbar-container-color: var(--mat-sys-error);
+}
+
+::ng-deep .snackbar-aviso {
+  --mdc-snackbar-container-color: var(--mat-sys-tertiary);
+}
+
+/* 
+  Benefícios desta abordagem:
+  ✅ Reconhecimento visual instantâneo do tipo de mensagem
+  ✅ Cores automáticas baseadas no tema da aplicação
+  ✅ Contraste adequado garantido pelo Material Design
+  ✅ Apenas 9 linhas de CSS personalizadas
+  ✅ Compatível com temas claro/escuro
+*/

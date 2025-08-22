@@ -1,0 +1,72 @@
+/* 
+  COMPATIBILIDADE - Angular Material + Tailwind CSS
+  
+  Proteções e correções para evitar conflitos entre
+  Angular Material e Tailwind CSS
+*/
+
+/* Proteção contra reset do Tailwind em componentes Angular Material */
+@layer base {
+  /* Restaura estilos essenciais para componentes Material */
+  .mat-mdc-form-field,
+  .mat-mdc-button,
+  .mat-mdc-card,
+  .mat-toolbar,
+  .mat-icon {
+    /* Previne reset agressivo do Tailwind */
+    box-sizing: border-box;
+  }
+  
+  /* Garante que o reset do Tailwind não afete tipografia do Material */
+  .mat-mdc-form-field .mat-mdc-floating-label,
+  .mat-mdc-button,
+  .mat-mdc-card-title,
+  .mat-toolbar {
+    font-family: var(--mat-sys-body-medium-font, Roboto, "Helvetica Neue", sans-serif);
+  }
+}
+
+/* Previne conflitos específicos com Angular Material */
+@layer components {
+  
+  /* Garante que classes customizadas não afetem componentes Material */
+  .mat-mdc-form-field {
+    /* Remove qualquer estilo customizado que possa interferir */
+    .form-label {
+      all: unset;
+      display: contents;
+    }
+    
+    /* Garante que form-input funcione corretamente */
+    .form-input {
+      /* Remove qualquer conflito de altura */
+      height: auto !important;
+      min-height: unset !important;
+      
+      /* Garante compatibilidade com densidade do Material */
+      line-height: inherit !important;
+    }
+  }
+  
+  /* Previne conflitos de botões customizados com mat-button */
+  .mat-mdc-button,
+  .mat-mdc-raised-button,
+  .mat-mdc-outlined-button,
+  .mat-mdc-fab,
+  .mat-mdc-mini-fab {
+    /* Remove estilos de botões customizados quando aplicados a componentes Material */
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-success,
+    &.btn-danger {
+      /* Reset para usar estilos nativos do Angular Material */
+      background: unset !important;
+      color: unset !important;
+      border: unset !important;
+      padding: unset !important;
+      box-shadow: unset !important;
+      border-radius: unset !important;
+      font-weight: unset !important;
+    }
+  }
+}

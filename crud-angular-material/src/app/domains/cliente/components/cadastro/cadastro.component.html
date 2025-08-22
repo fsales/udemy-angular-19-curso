@@ -1,0 +1,148 @@
+<article class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 max-w-6xl">
+  <h1 class="mat-headline-3 mb-6 sm:mb-8 lg:mb-12 text-center mat-title-color">Formulário</h1>
+
+  <form class="space-y-4 sm:space-y-6 lg:space-y-8" aria-label="Formulário de Cadastro" #clientesFrm="ngForm" (ngSubmit)="salvar(clientesFrm)" >
+
+    <mat-card class="mat-elevation-z4">
+      <mat-card-header class="mat-header-style p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8">
+        <mat-card-title class="mat-title">Dados Pessoais</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="p-4 sm:p-6 lg:p-8 pt-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          <!-- Nome - ocupa largura total em mobile, meia largura em desktop -->
+          <div class="col-span-1 md:col-span-2 lg:col-span-1">
+            <mat-form-field class="w-full">
+              <mat-label class="form-label-required">Nome</mat-label>
+              <input 
+                matInput 
+                [(ngModel)] = "cliente.nome"
+                name="nome"
+                type="text" 
+                placeholder="Ex: José da Silva" 
+                class="form-input" 
+                required
+              />
+            </mat-form-field>
+          </div>
+          
+          <!-- E-mail - ocupa largura total em mobile, meia largura em desktop -->
+          <div class="col-span-1">
+            <mat-form-field class="w-full">
+              <mat-label class="form-label-required">E-mail</mat-label>
+              <input 
+                matInput 
+                [(ngModel)] = "cliente.email"
+                name="email"
+                type="email" 
+                placeholder="Ex: jose.silva@email.com" 
+                class="form-input" 
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- CPF - campo menor, adequado para o conteúdo -->
+          <div class="col-span-1">
+            <mat-form-field class="w-full">
+              <mat-label class="form-label-required">CPF</mat-label>
+              <input 
+                matInput 
+                [(ngModel)] = "cliente.cpf"
+                name="cpf"
+                mask="000.000.000-00"
+                type="text" 
+                placeholder="Ex: 123.456.789-00" 
+                class="form-input"
+                required
+              />
+            </mat-form-field>
+          </div>
+          
+          <!-- Data de nascimento - campo menor, adequado para o conteúdo -->
+          <div class="col-span-1">
+            <mat-form-field class="w-full">
+              <mat-label class="form-label-required">Data de nascimento</mat-label>
+              <input 
+                matInput 
+                [(ngModel)]="cliente.dataNascimento"
+                name="dataNascimento"
+                type="date" 
+                placeholder="Ex: 01/01/2000" 
+                class="form-input"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <!-- Estado -->
+          <div class="col-span-1">
+            <mat-form-field class="w-full">
+              <mat-label class="form-label-required">UF</mat-label>
+              <mat-select 
+                name="uf"
+                class="form-input"
+                (selectionChange)="carregarMunicipios($event)"
+                [(ngModel)]="cliente.uf"
+                required
+              >
+                @for (estado of estados; track estado.sigla) {
+                  <mat-option [value]="estado.sigla">
+                    {{ estado.sigla }} - {{ estado.nome }}
+                  </mat-option>
+                }
+                
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Estado -->
+          <div class="col-span-1">
+            <mat-form-field class="w-full">
+              <mat-label class="form-label-required">Município</mat-label>
+              <mat-select 
+                name="municipio"
+                class="form-input"
+                [(value)]="cliente.municipio"
+                required
+              >
+                @for (municipio of municipios; track municipio.nome) {
+                  <mat-option [value]="municipio.nome">
+                    {{ municipio.nome }}
+                  </mat-option>
+                }
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="p-4 sm:p-6 lg:p-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+
+          @if (atualizando) {
+            <button type="submit" mat-flat-button color="accent" class="w-full">
+              <mat-icon fontIcon="refresh" class="mr-2"></mat-icon>
+              Atualizar
+            </button>
+          } @else {
+            <button type="submit" mat-raised-button color="primary" class="w-full mat-elevation-z2">
+              <mat-icon fontIcon="save" class="mr-2"></mat-icon>
+              Salvar
+            </button>  
+          }
+
+          <button type="button" mat-flat-button color="warn" class="w-full" (click)="limpar(clientesFrm)">
+            <mat-icon fontIcon="clear" class="mr-2"></mat-icon>
+            Limpar
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+
+  </form>
+
+</article>

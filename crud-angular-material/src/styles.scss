@@ -1,0 +1,51 @@
+/*
+================================================================================
+                           SASS IMPORTS (DEVE SER PRIMEIRO)
+================================================================================
+*/
+
+// Todos os @use devem vir ANTES de qualquer outra regra CSS
+@use '@angular/material' as mat;
+@use 'styles/base/compatibility.scss';
+@use 'styles/theme/material-theme.scss';
+@use 'styles/components/index';
+
+/*
+================================================================================
+                           ANGULAR MATERIAL SETUP
+================================================================================
+*/
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@include mat.core();
+
+/*
+================================================================================
+                              TAILWIND CSS SETUP
+================================================================================
+*/
+
+// Include tailwindcss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+================================================================================
+                              GLOBAL STYLES
+================================================================================
+*/
+
+/* Global Styles */
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}

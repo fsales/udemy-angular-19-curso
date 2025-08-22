@@ -1,0 +1,14 @@
+/* Estilos específicos do componente usando variáveis do Angular Material */
+
+.mat-title-color {
+  color: var(--mat-sys-on-surface);
+}
+
+.mat-header-style {
+  background: linear-gradient(135deg, 
+    var(--mat-sys-primary-container) 0%, 
+    var(--mat-sys-secondary-container) 100%
+  );
+  border-left: 4px solid var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary-container);
+}

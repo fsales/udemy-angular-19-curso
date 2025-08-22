@@ -1,0 +1,26 @@
+/* Estilos específicos do componente - Angular Material + Tailwind fallback */
+
+.mat-title-color {
+  // Usando variáveis do Material Design 3 com fallback Tailwind
+  color: var(--mat-sys-on-surface, theme('colors.gray.900'));
+}
+
+.mat-header-style {
+  // Gradiente usando variáveis do Angular Material
+  background: linear-gradient(135deg, 
+    var(--mat-sys-primary-container, theme('colors.blue.100')) 0%, 
+    var(--mat-sys-secondary-container, theme('colors.purple.100')) 100%
+  );
+  border-left: var(--mat-sys-outline-width, 4px) solid var(--mat-sys-primary, theme('colors.blue.600'));
+  color: var(--mat-sys-on-primary-container, theme('colors.blue.900'));
+  
+  // Usando tokens de espaçamento do Material Design
+  padding: var(--mat-sys-spacing-4, theme('spacing.4'));
+  border-radius: var(--mat-sys-corner-small, theme('borderRadius.lg'));
+  
+  // Typography usando tokens do Material
+  font-family: var(--mat-app-headline-small-font, theme('fontFamily.sans'));
+  font-size: var(--mat-app-headline-small-size, theme('fontSize.lg'));
+  font-weight: var(--mat-app-headline-small-weight, theme('fontWeight.medium'));
+  line-height: var(--mat-app-headline-small-line-height, theme('lineHeight.tight'));
+}

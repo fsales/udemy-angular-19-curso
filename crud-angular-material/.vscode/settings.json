@@ -1,0 +1,20 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "tailwindCSS.includeLanguages": {
+    "scss": "css",
+    "sass": "css"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["class:\\s*['\"`]([^'\"`]*)['\"`]", "['\"`]([^'\"`]*)['\"`]"]
+  ],
+  "files.associations": {
+    "*.scss": "scss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.validate": true,
+  "tailwindCSS.emmetCompletions": true
+}
